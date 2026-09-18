@@ -111,17 +111,20 @@ window.Orbit = window.Orbit || {};
   // this offset the inner end BACKWARD past center, which left a small reversed
   // stub on every spoke; those stubs lined up into their own tiny asterisk,
   // making the mark look like two stars overlapping.
+  // A random rotation offset per mark keeps a field of them from all lining up
+  // at identical angles, which read as too rigid/mechanical.
   Drawing.drawAsterisk = function (ctx, center, diameter, spokes, color) {
     spokes = spokes || 8;
     color = color || 'rgba(255,255,255,0.9)';
     var r = diameter / 2;
     var innerR = r * 0.08;
+    var rotation = Math.random() * Math.PI * 2;
     ctx.save();
     ctx.strokeStyle = color;
     ctx.lineWidth = 1.5;
     ctx.lineCap = 'round';
     for (var i = 0; i < spokes; i++) {
-      var angle = (i / spokes) * Math.PI * 2;
+      var angle = rotation + (i / spokes) * Math.PI * 2;
       var cos = Math.cos(angle);
       var sin = Math.sin(angle);
       var x1 = center.x + cos * innerR;

@@ -28,7 +28,7 @@ window.Orbit = window.Orbit || {};
     var inst = {
       id: id,
       typeIndex: typeIndex,
-      color: type.color,
+      color: type.lineColor,
       points: [{ x: x, y: y, t: now }],
       parentIds: [],
       bornAt: now,
@@ -76,7 +76,7 @@ window.Orbit = window.Orbit || {};
     var child = {
       id: newId,
       typeIndex: newTypeIndex,
-      color: type.color,
+      color: type.lineColor,
       points: [{ x: mid.x, y: mid.y, t: now }],
       parentIds: [idA, idB],
       bornAt: now,
