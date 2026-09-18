@@ -24,6 +24,12 @@ window.Orbit = window.Orbit || {};
     for (var i = 0; i < pairs.length; i++) {
       var bodyA = pairs[i].bodyA;
       var bodyB = pairs[i].bodyB;
+
+      // Any contact -- with the floor/walls or another planet -- ends a
+      // planet's untracked free-fall and starts its orbit recording.
+      this._markLandedIfNeeded(bodyA);
+      this._markLandedIfNeeded(bodyB);
+
       var a = bodyA.plugin;
       var b = bodyB.plugin;
       if (!a || !b || !a.instanceId || !b.instanceId) continue;
@@ -33,6 +39,12 @@ window.Orbit = window.Orbit || {};
       b.pendingRemoval = true;
       this.pending.push({ bodyA: bodyA, bodyB: bodyB });
     }
+  };
+
+  MergeSystem.prototype._markLandedIfNeeded = function (body) {
+    var plugin = body.plugin;
+    if (!plugin || !plugin.instanceId) return;
+    this.orbitTracker.markLanded(plugin.instanceId, body.position.x, body.position.y, performance.now());
   };
 
   // Must be called AFTER Engine.update, never from inside the collision callback --
