@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>The Orbit of the Planets</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="header-title" href="index.html">the orbit of the planets</a>
+  <a class="header-link" href="about.html">About</a>
+</header>
+
+<main>
+
+  <section id="screen-menu" class="screen active">
+    <div class="menu-panel">
+      <p class="menu-copy">Drop planets from Mercury to Jupiter.<br>Merge them, and draw your own orbit.</p>
+      <button id="startBtn" class="btn btn-primary">Start</button>
+    </div>
+  </section>
+
+  <section id="screen-game" class="screen">
+    <div class="play-column">
+      <canvas id="gameCanvas"></canvas>
+    </div>
+  </section>
+
+  <section id="screen-results" class="screen">
+    <div class="results-panel">
+      <canvas id="resultsCanvas"></canvas>
+      <div class="results-actions">
+        <button id="downloadBtn" class="btn">Download</button>
+        <button id="playAgainBtn" class="btn btn-primary">Play Again</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="sunBloom" class="sun-bloom"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/matter-js@0.19.0/build/matter.min.js"></script>
+<script src="js/planet-config.js"></script>
+<script src="js/orbit-tracker.js"></script>
+<script src="js/matter-setup.js"></script>
+<script src="js/input.js"></script>
+<script src="js/merge.js"></script>
+<script src="js/drawing.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>

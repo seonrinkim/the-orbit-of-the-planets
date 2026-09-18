@@ -1,0 +1,40 @@
+.about-body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.about-main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 110px 20px 60px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.about-intro {
+  margin-bottom: 40px;
+}
+
+.about-contacts {
+  color: #9a9a9a;
+  margin-bottom: 32px;
+}
+
+.about-contacts p {
+  margin: 4px 0;
+  line-height: 1.4;
+}
+
+.about-contacts a {
+  color: #9a9a9a;
+}
+
+.about-heading {
+  color: #9a9a9a;
+  font-weight: 600;
+}
+
+.about-copyright {
+  color: #9a9a9a;
+  font-size: 14px;
+}
